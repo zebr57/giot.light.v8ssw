@@ -199,7 +199,7 @@ export default class CommonSetting1 extends BaseComponent {
                     showSeparator={false}
                     onPress={() => {
                       if (Device.model == 'giot.light.v5ssw'
-                                            || Device.model == 'giot.light.v8ssw'
+                                            || Device.model == 'imigy.light.ym001'
                                             || Device.model == 'giot.light.dblgt1'
                                             || Device.model == 'giot.light.hwzd1'
                                             || Device.model == 'giot.light.xwzd1'
@@ -244,7 +244,7 @@ export default class CommonSetting1 extends BaseComponent {
                         || Device.model == 'nvcsmt.light.bcs201'
                 ? null :
                 Device.isOnline && Device.model != 'giot.light.v5ssw'
-                            && Device.model != 'giot.light.v8ssw'
+                            && Device.model != 'imigy.light.ym001'
                             && Device.model != 'giot.light.dblgt1'
                             && Device.model != 'giot.light.hwzd1'
                             && Device.model != 'giot.light.xwzd1'
