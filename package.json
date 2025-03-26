@@ -1,0 +1,12 @@
+{
+    "name": "project-giot-light-v8ssw",
+    "version": "1.0.25",
+    "scripts": {
+        "start": "node ../../bin/runProject.js"
+    },
+    "dependencies": {
+        "react-native-popup-dialog": "^0.18.3",
+        "react-native-root-siblings": "^4.1.1",
+        "static-container": "^1.7.1"
+    }
+}
