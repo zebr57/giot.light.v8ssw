@@ -212,7 +212,7 @@ export default class Main extends BaseComponent {
           Device.model == 'leedar.light.600'
                 || Device.model == 'giot.light.v8ssm'
                 || Device.model == 'giot.light.dblgt2'
-                || Device.model == 'giot.light.v8ssw'
+                || Device.model == 'ym001.light.v8w'
                 || Device.model == 'giot.light.dblgt1'
                 || Device.model == 'giot.light.hwzd1'
                 || Device.model == 'giot.light.xwzd1'
@@ -229,7 +229,7 @@ export default class Main extends BaseComponent {
         mode3: Device.model == 'leedar.light.600'
             || Device.model == 'giot.light.v8ssm'
             || Device.model == 'giot.light.dblgt2'
-            || Device.model == 'giot.light.v8ssw'
+            || Device.model == 'ym001.light.v8w'
             || Device.model == 'giot.light.dblgt1'
             || Device.model == 'giot.light.hwzd1'
             || Device.model == 'giot.light.xwzd1'
@@ -1103,10 +1103,10 @@ export default class Main extends BaseComponent {
 
     componentWillMount() {
       DataUtils.resetJv();
-      // giot.light.v8ssw || giot.light.xhyd1 || giot.light.hhyd1
+      // ym001.light.v8w || giot.light.xhyd1 || giot.light.hhyd1
       if (!Device.isOnline
             && Device.model != 'giot.light.v5ssw'
-            && Device.model != 'giot.light.v8ssw'
+            && Device.model != 'ym001.light.v8w'
             && Device.model != 'giot.light.dblgt1'
             && Device.model != 'giot.light.hwzd1'
             && Device.model != 'giot.light.xwzd1'
@@ -2478,7 +2478,7 @@ export default class Main extends BaseComponent {
         }} onLayout={(event) => this.onLayout(event)}>
 
           {(Device.model != 'giot.light.v5ssw'
-                    && Device.model != 'giot.light.v8ssw'
+                    && Device.model != 'ym001.light.v8w'
                     && Device.model != 'giot.light.dblgt1'
                     && Device.model != 'giot.light.hwzd1'
                     && Device.model != 'giot.light.xwzd1'
@@ -2932,7 +2932,7 @@ export default class Main extends BaseComponent {
           </View>
 
           {Device.model == 'giot.light.v8ssm'
-                || Device.model == 'giot.light.v8ssw'
+                || Device.model == 'ym001.light.v8w'
                 || Device.model == 'giot.light.dblgt1'
                 || Device.model == 'giot.light.hwzd1'
                 || Device.model == 'giot.light.xwzd1'

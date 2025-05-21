@@ -602,7 +602,7 @@ export default class Default extends BaseComponent {
               }}>{
                   Device.model == 'nvcsmt.light.bas202'
                             || Device.model == 'nvcsmt.light.bcs201'
-                            || Device.model == 'giot.light.v8ssw'
+                            || Device.model == 'ym001.light.v8w'
                             || Device.model == 'giot.light.dblgt1'
                             || Device.model == 'giot.light.hwzd1'
                             || Device.model == 'giot.light.xwzd1'
