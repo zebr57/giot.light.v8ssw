@@ -2589,7 +2589,7 @@ export default class Main extends BaseComponent {
             : null
           }
           <Image
-            style={{width: 200, height: 200 }}
+            style={{ width: 200, height: 200 }}
             source={require('../resources/logo.png')}/>
           <MHCard
             style={{ backgroundColor: '#fff' }}
@@ -3040,14 +3040,14 @@ export default class Main extends BaseComponent {
                     flexDirection: 'row',
                     backgroundColor:
                       !this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? defaultColor 
-                      : this.state.mode == 9 ? primaryColor : defaultColor,
+                        : this.state.mode == 9 ? primaryColor : defaultColor,
                     borderRadius: 99,
                     width: iconSize,
-                    height: iconSize,
+                    height: iconSize
                   }}>
-                  <Image
-                    style={{ resizeMode: 'contain', width: iconSize, height: iconSize }}
-                    source={require("../resources/icon/breathe_ic.png")}/>
+                    <Image
+                      style={{ resizeMode: 'contain', width: iconSize, height: iconSize }}
+                      source={require("../resources/icon/breathe_ic.png")}/>
                   </View>
                   <Text
                     style={{
@@ -3115,14 +3115,14 @@ export default class Main extends BaseComponent {
                     flexDirection: 'row',
                     backgroundColor:
                       !this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? defaultColor 
-                      : this.state.mode == 10 ? primaryColor : defaultColor,
+                        : this.state.mode == 10 ? primaryColor : defaultColor,
                     borderRadius: 99,
                     width: iconSize,
-                    height: iconSize,
+                    height: iconSize
                   }}>
-                  <Image
-                    style={{ resizeMode: 'contain', width: iconSize, height: iconSize }}
-                    source={require("../resources/icon/meter_ic.png")}/>
+                    <Image
+                      style={{ resizeMode: 'contain', width: iconSize, height: iconSize }}
+                      source={require("../resources/icon/meter_ic.png")}/>
                   </View>
                   <Text
                     style={{
@@ -3664,13 +3664,13 @@ export default class Main extends BaseComponent {
                       !Device.isOnline && !this.props.btConnect ? undefined : primaryColor,
                     borderRadius: 99,
                     width: iconSize,
-                    height: iconSize,
+                    height: iconSize
                   }}>
                     <Image
                       style={{
                         resizeMode: 'contain',
                         width: iconSize,
-                        height: iconSize,
+                        height: iconSize
                       }}
                       source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/timer_dis_ic_dark.png') : require('../resources/timer_dis_ic.png') : require('../resources/icon/timing_ic.png')}/>
                   </View>
@@ -3731,15 +3731,15 @@ export default class Main extends BaseComponent {
                       !Device.isOnline && !this.props.btConnect ? undefined : primaryColor,
                     borderRadius: 99,
                     width: iconSize,
-                    height: iconSize,
+                    height: iconSize
                   }}>
-                  <Image
-                    style={{
-                      resizeMode: 'contain',
-                      width: iconSize,
-                      height: iconSize,
-                    }}
-                    source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/countdown_dis_ic_dark.png') : require('../resources/countdown_dis_ic.png') : require('../resources/icon/countdown_ic.png')}/>
+                    <Image
+                      style={{
+                        resizeMode: 'contain',
+                        width: iconSize,
+                        height: iconSize
+                      }}
+                      source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/countdown_dis_ic_dark.png') : require('../resources/countdown_dis_ic.png') : require('../resources/icon/countdown_ic.png')}/>
                   </View>
                   <Text
                     style={{
@@ -3784,7 +3784,7 @@ export default class Main extends BaseComponent {
                 <View style={{
                   alignItems: 'center',
                   flexDirection: 'row',
-                  flex: 1,
+                  flex: 1
                 }}>
                   <View style={{
                     alignItems: 'center',
@@ -3793,13 +3793,13 @@ export default class Main extends BaseComponent {
                       !Device.isOnline && !this.props.btConnect ? undefined : primaryColor,
                     borderRadius: 99,
                     width: iconSize,
-                    height: iconSize,
+                    height: iconSize
                   }}>
                     <Image
                       style={{
                         resizeMode: 'contain',
                         width: iconSize,
-                        height: iconSize,
+                        height: iconSize
                       }}
                       source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/sence_dis_ic_dark.png') : require('../resources/sence_dis_ic.png') : require('../resources/icon/smart_scene_ic.png')}/>
                   </View>
