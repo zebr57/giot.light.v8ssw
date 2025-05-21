@@ -13,10 +13,10 @@ export const Theme = {
       pm25UnitLabel: '#cccccc',
       pm25ValueLabelColor: '#000000',
       levelButtons: {
-        iconButtonActiveBgColor: '#f0f0f0',
-        iconButtonInActiveBgColor: '#f0f0f0',
-        iconButtonInActiveBorderColor: '#f0f0f0',
-        iconButtonTouchUnderlayColor: '#f0f0f0'
+        iconButtonActiveBgColor: '#60b6bc',
+        iconButtonInActiveBgColor: '#dbdee3',
+        iconButtonInActiveBorderColor: '#dbdee3',
+        iconButtonTouchUnderlayColor: '#60b6bc'
       }
     }
   },
@@ -34,10 +34,10 @@ export const Theme = {
       pm25UnitLabel: '#cccccc',
       pm25ValueLabelColor: '#000000',
       levelButtons: {
-        iconButtonActiveBgColor: '#f0f0f0',
-        iconButtonInActiveBgColor: '#f0f0f0',
-        iconButtonInActiveBorderColor: '#f0f0f0',
-        iconButtonTouchUnderlayColor: '#f0f0f0'
+        iconButtonActiveBgColor: '#60b6bc',
+        iconButtonInActiveBgColor: '#dbdee3',
+        iconButtonInActiveBorderColor: '#dbdee3',
+        iconButtonTouchUnderlayColor: '#60b6bc'
       }
     }
   }

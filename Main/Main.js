@@ -40,6 +40,7 @@ import BrightnessLightDialog2 from "./View/BrightnessLightDialog2";
 import LinearGradient from "react-native-linear-gradient";
 import { colorGetterforRange } from 'miot/utils/colors';
 import DataUtils from "./Utils/DataUtils";
+import { defaultColor, iconSize, primaryColor } from "../config";
 
 const circle = require('../resources/connecting_ic.png');
 
@@ -1999,7 +2000,7 @@ export default class Main extends BaseComponent {
       let bottomView = this._bottomView();
       return (
         <ImageBackground style={{ flex: 1 }}
-          source={this.state.lightPower ? require('../resources/on_bg.png') : require('../resources/off_bg.png')}>
+          source={require('../resources/bg.png')}>
 
           <NavigationBar
             backgroundColor={'#ffffff00'}
@@ -2385,7 +2386,7 @@ export default class Main extends BaseComponent {
 
 
     _getColor(temp, bgAlpha) {
-      return '#4396EBFF';
+      return primaryColor;
       //  return `xm${ColorTemperatureGetter.getColorFromPercent(getColorTemperaturePercent(temp, [colorMin, colorMax])) + parseInt(this._getCheckBrightness(bgAlpha * (185 / 100) + 70)).toString(16)}`;
     }
 
@@ -2474,7 +2475,7 @@ export default class Main extends BaseComponent {
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
-          marginTop: 280
+          marginTop: 80
         }} onLayout={(event) => this.onLayout(event)}>
 
           {(Device.model != 'giot.light.v5ssw'
@@ -2587,7 +2588,9 @@ export default class Main extends BaseComponent {
             </View>
             : null
           }
-
+          <Image
+            style={{width: 200, height: 200 }}
+            source={require('../resources/logo.png')}/>
           <MHCard
             style={{ backgroundColor: '#fff' }}
             titleStyle={{
@@ -2598,12 +2601,12 @@ export default class Main extends BaseComponent {
             iconContainerStyle={{
               borderRadius: 999,
               width: 40,
-              height: 40
-              // backgroundColor: Device.isOnline ? '#4396EB' : '#00000050'
+              height: 40,
+              backgroundColor: this.state.lightPower ? primaryColor : "#ed7a51"
             }}
             // disabled={(!Device.isOnline && !this.state.btConnect)}
             title={this.state.lightPower ? HomeLocalizableString.light_colse : HomeLocalizableString.light_open}
-            icon={this.state.lightPower ? require('../resources/power_on_btn.png') : require('../resources/power_off_btn.png')}
+            icon={require('../resources/icon/power_ic.png')}
             cardType={MHCard.CARD_TYPE.NORMAL}
             cardRadiusType={MHCard.CARD_RADIUS_TYPE.ALL}
             onPress={() => {
@@ -2709,7 +2712,7 @@ export default class Main extends BaseComponent {
                     width: 0 + (((this.mScreenWidth * 0.94) - 40 - 0) * (this.state.brightness / 100)),
                     height: 48,
                     position: 'absolute',
-                    backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? '#4396EBFF' : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
+                    backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? primaryColor : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -2847,7 +2850,7 @@ export default class Main extends BaseComponent {
                     width: 0 + (((this.mScreenWidth * 0.94) - 40 - 0) * ((this.state.color_temperature - colorMin) / (colorMax - colorMin))),
                     height: 48,
                     position: 'absolute',
-                    backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? '#4396EBFF' : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
+                    backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? primaryColor : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -3032,12 +3035,20 @@ export default class Main extends BaseComponent {
                   alignItems: 'center',
                   flexDirection: 'row'
                 }}>
-
+                  <View style={{
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    backgroundColor:
+                      !this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? defaultColor 
+                      : this.state.mode == 9 ? primaryColor : defaultColor,
+                    borderRadius: 99,
+                    width: iconSize,
+                    height: iconSize,
+                  }}>
                   <Image
-                    style={{ resizeMode: 'contain', width: 42, height: 42 }}
-                    source={
-                      !this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/huxi_dark.png') : require('../resources/huxi.png')
-                        : this.state.mode == 9 ? require('../resources/huxi_sel.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/huxi_dark.png') : require('../resources/huxi.png')}/>
+                    style={{ resizeMode: 'contain', width: iconSize, height: iconSize }}
+                    source={require("../resources/icon/breathe_ic.png")}/>
+                  </View>
                   <Text
                     style={{
                       fontSize: Host.locale.language == 'zh' ? 16 : 13,
@@ -3099,14 +3110,20 @@ export default class Main extends BaseComponent {
                   alignItems: 'center',
                   flexDirection: 'row'
                 }}>
-
+                  <View style={{
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    backgroundColor:
+                      !this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? defaultColor 
+                      : this.state.mode == 10 ? primaryColor : defaultColor,
+                    borderRadius: 99,
+                    width: iconSize,
+                    height: iconSize,
+                  }}>
                   <Image
-                    style={{ resizeMode: 'contain', width: 42, height: 42 }}
-                    source={
-                      !this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ?
-                        DarkMode.getColorScheme() === 'dark' ? require('../resources/lvdong_dark.png') : require('../resources/lvdong.png')
-                        : !this.state.lightPower ? DarkMode.getColorScheme() === 'dark' ? require('../resources/lvdong_dark.png') : require('../resources/lvdong.png') :
-                          this.state.mode == 10 ? require('../resources/lvdong_sel.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/lvdong_dark.png') : require('../resources/lvdong.png')}/>
+                    style={{ resizeMode: 'contain', width: iconSize, height: iconSize }}
+                    source={require("../resources/icon/meter_ic.png")}/>
+                  </View>
                   <Text
                     style={{
                       fontSize: Host.locale.language == 'zh' ? 16 : 13,
@@ -3189,7 +3206,7 @@ export default class Main extends BaseComponent {
                       DarkMode.getColorScheme() === 'dark' ? require('../resources/sun_btn_dark.png') : require('../resources/sun_btn.png')}
                     activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ?
                       DarkMode.getColorScheme() === 'dark' ? require('../resources/sun_dis_btn_dark.png') : require('../resources/sun_dis_btn.png') :
-                      require('../resources/sun_sel_btn.png')}
+                      require('../resources/icon/sun_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3209,7 +3226,7 @@ export default class Main extends BaseComponent {
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ?
                       DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_dis_btn_dark.png') : require('../resources/moon_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_btn_dark.png') : require('../resources/moon_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_dis_btn_dark.png') : require('../resources/moon_dis_btn.png') : require('../resources/moon_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_dis_btn_dark.png') : require('../resources/moon_dis_btn.png') : require('../resources/icon/moon_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3229,7 +3246,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_dis_btn_dark.png') : require('../resources/warm_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_btn_dark.png') : require('../resources/warm_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_dis_btn_dark.png') : require('../resources/warm_dis_btn.png') : require('../resources/warm_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_dis_btn_dark.png') : require('../resources/warm_dis_btn.png') : require('../resources/icon/leisure_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3249,7 +3266,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_dis_btn_dark.png') : require('../resources/movie_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_btn_dark.png') : require('../resources/movie_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_dis_btn_dark.png') : require('../resources/movie_dis_btn.png') : require('../resources/movie_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_dis_btn_dark.png') : require('../resources/movie_dis_btn.png') : require('../resources/icon/film_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                 </View>
@@ -3272,7 +3289,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/read_dis_btn_dark.png') : require('../resources/read_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/read_btn_dark.png') : require('../resources/read_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/read_dis_btn_dark.png') : require('../resources/read_dis_btn.png') : require('../resources/read_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/read_dis_btn_dark.png') : require('../resources/read_dis_btn.png') : require('../resources/icon/read_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3292,7 +3309,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/computer_dis_btn_dark.png') : require('../resources/computer_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/computer_btn_dark.png') : require('../resources/computer_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/computer_dis_btn_dark.png') : require('../resources/computer_dis_btn.png') : require('../resources/computer_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/computer_dis_btn_dark.png') : require('../resources/computer_dis_btn.png') : require('../resources/icon/computer_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3312,7 +3329,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/sleep_dis_btn_dark.png') : require('../resources/sleep_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/sleep_btn_dark.png') : require('../resources/sleep_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/sleep_dis_btn_dark.png') : require('../resources/sleep_dis_btn.png') : require('../resources/sleep_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/sleep_dis_btn_dark.png') : require('../resources/sleep_dis_btn.png') : require('../resources//icon/sleep_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3331,7 +3348,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={(!Device.isOnline && !this.state.btConnect) ? require('../resources/wake_dis_btn.png') : !this.state.lightPower ? DarkMode.getColorScheme() === 'dark' ? require('../resources/wake_btn_dark.png') : require('../resources/wake_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/wake_btn_dark.png') : require('../resources/wake_btn.png')}
-                    activeIcon={(!Device.isOnline && !this.state.btConnect) ? require('../resources/wake_dis_btn.png') : !this.state.lightPower ? DarkMode.getColorScheme() === 'dark' ? require('../resources/wake_btn_dark.png') : require('../resources/wake_btn.png') : require('../resources/wake_sel_btn.png')}
+                    activeIcon={(!Device.isOnline && !this.state.btConnect) ? require('../resources/wake_dis_btn.png') : !this.state.lightPower ? DarkMode.getColorScheme() === 'dark' ? require('../resources/wake_btn_dark.png') : require('../resources/wake_btn.png') : require('../resources/icon/awake_ic.png')}
                     disabled={(!Device.isOnline && !this.state.btConnect)}
                   />
                 </View>
@@ -3363,7 +3380,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_dis_btn_dark.png') : require('../resources/moon_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_btn_dark.png') : require('../resources/moon_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_dis_btn_dark.png') : require('../resources/moon_dis_btn.png') : require('../resources/moon_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/moon_dis_btn_dark.png') : require('../resources/moon_dis_btn.png') : require('../resources/icon/moon_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3383,7 +3400,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_dis_btn_dark.png') : require('../resources/warm_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_btn_dark.png') : require('../resources/warm_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_dis_btn_dark.png') : require('../resources/warm_dis_btn.png') : require('../resources/warm_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/warm_dis_btn_dark.png') : require('../resources/warm_dis_btn.png') : require('../resources/icon/leisure_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3403,7 +3420,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/read_dis_btn_dark.png') : require('../resources/read_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/read_btn_dark.png') : require('../resources/read_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/read_dis_btn_dark.png') : require('../resources/read_dis_btn.png') : require('../resources/read_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/read_dis_btn_dark.png') : require('../resources/read_dis_btn.png') : require('../resources/icon/read_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                   <IconButton
@@ -3423,7 +3440,7 @@ export default class Main extends BaseComponent {
                     }}
                     theme={Theme[this.colorScheme].hood.levelButtons}
                     inactiveIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_dis_btn_dark.png') : require('../resources/movie_dis_btn.png') : DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_btn_dark.png') : require('../resources/movie_btn.png')}
-                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_dis_btn_dark.png') : require('../resources/movie_dis_btn.png') : require('../resources/movie_sel_btn.png')}
+                    activeIcon={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/movie_dis_btn_dark.png') : require('../resources/movie_dis_btn.png') : require('../resources/icon/film_ic.png')}
                     disabled={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect)}
                   />
                 </View>
@@ -3640,11 +3657,23 @@ export default class Main extends BaseComponent {
                   flexDirection: 'row',
                   flex: 1
                 }}>
-                  <Image
-                    style={{
-                      resizeMode: 'contain'
-                    }}
-                    source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/timer_dis_ic_dark.png') : require('../resources/timer_dis_ic.png') : require('../resources/timer_ic.png')}/>
+                  <View style={{
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    backgroundColor:
+                      !Device.isOnline && !this.props.btConnect ? undefined : primaryColor,
+                    borderRadius: 99,
+                    width: iconSize,
+                    height: iconSize,
+                  }}>
+                    <Image
+                      style={{
+                        resizeMode: 'contain',
+                        width: iconSize,
+                        height: iconSize,
+                      }}
+                      source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/timer_dis_ic_dark.png') : require('../resources/timer_dis_ic.png') : require('../resources/icon/timing_ic.png')}/>
+                  </View>
                   <Text
                     style={{
                       fontSize: 16,
@@ -3695,11 +3724,23 @@ export default class Main extends BaseComponent {
                   flexDirection: 'row',
                   flex: 1
                 }}>
+                  <View style={{
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    backgroundColor:
+                      !Device.isOnline && !this.props.btConnect ? undefined : primaryColor,
+                    borderRadius: 99,
+                    width: iconSize,
+                    height: iconSize,
+                  }}>
                   <Image
                     style={{
-                      resizeMode: 'contain'
+                      resizeMode: 'contain',
+                      width: iconSize,
+                      height: iconSize,
                     }}
-                    source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/countdown_dis_ic_dark.png') : require('../resources/countdown_dis_ic.png') : require('../resources/countdown_ic.png')}/>
+                    source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/countdown_dis_ic_dark.png') : require('../resources/countdown_dis_ic.png') : require('../resources/icon/countdown_ic.png')}/>
+                  </View>
                   <Text
                     style={{
                       fontSize: 16,
@@ -3743,13 +3784,26 @@ export default class Main extends BaseComponent {
                 <View style={{
                   alignItems: 'center',
                   flexDirection: 'row',
-                  flex: 1
+                  flex: 1,
                 }}>
-                  <Image
-                    style={{
-                      resizeMode: 'contain'
-                    }}
-                    source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/sence_dis_ic_dark.png') : require('../resources/sence_dis_ic.png') : require('../resources/sence_ic.png')}/>
+                  <View style={{
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    backgroundColor:
+                      !Device.isOnline && !this.props.btConnect ? undefined : primaryColor,
+                    borderRadius: 99,
+                    width: iconSize,
+                    height: iconSize,
+                  }}>
+                    <Image
+                      style={{
+                        resizeMode: 'contain',
+                        width: iconSize,
+                        height: iconSize,
+                      }}
+                      source={(!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/sence_dis_ic_dark.png') : require('../resources/sence_dis_ic.png') : require('../resources/icon/smart_scene_ic.png')}/>
+                  </View>
+
                   <Text
                     style={{
                       fontSize: 16,
