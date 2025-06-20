@@ -152,18 +152,18 @@ export default strings = new LocalizedStrings({
     开灯状态: 'Turn on light status',
     开灯: 'Turn on the light',
     关灯: 'Turn off the light',
-    开灯提示语: 'After the lamp is powered on,\nit turns on by default (This state\nis the factory default state)',
-    关灯提示语: 'If the last power on is greater\nthan 8 seconds, after the lamp is\npowered on, the default Enter the\nlight off state;',
+    开灯提示语: 'After the lamp is powered on, it turns on by default (This state is the factory default state)',
+    关灯提示语: 'If the last power on is greater than 8 seconds, after the lamp is powered on, the default Enter the light off state;',
     通电状态提示语: 'In order to solve the problem of restoring power supply after the power grid runs out, which causes the lamps to turn on by default, thus affecting the user\'s rest',
     通电状态提示语2: 'In order to solve the problem of restoring power supply after the power grid runs out, which causes the lamps to turn on by default, thus affecting the user\'s rest;\n\nWhen using a mechanical switch, it needs to be switched twice in 8 seconds to trigger the light on',
     关灯前状态: 'Status before light off',
-    关灯前状态提示: 'Turn on the lamp and enter the state before\nturning off the lamp (if the lamp is turned on\nand off within 8 seconds, the lamp will cycle\nto switch the light mode)',
+    关灯前状态提示: 'Turn on the lamp and enter the state before turning off the lamp (if the lamp is turned on and off within 8 seconds, the lamp will cycle to switch the light mode)',
     leedarson关灯前状态提示: 'Turn on the lamp and enter the state before',
     默认状态: 'Default status',
     默认状态提示语: 'Turn on the light to enter the default state',
     当前灯具默认状态: 'Current lamp default state',
     更新: 'Update',
-    开启灵动开关: 'Turn on the "smart switch"\nfunction',
+    开启灵动开关: 'Turn on the "smart switch" function',
     开启灵动开关说明: 'Function description of smart switch \n' +
             '\n' +
             '1. If this smart light supports the use with a wall switch with a "smart switch" function, this function can be turned on to realize that the device is still powered on and online when the light is off, and supports intelligent control. \n' +
@@ -240,7 +240,7 @@ export default strings = new LocalizedStrings({
     专业设置功能说明: 'During the lighting change process, if the dimming range of the light is too small to meet the maximum duration requirement of the gradient, the lamp will shorten the duration of the light change, prioritize ensuring the dimming experience of the lamp, and avoid discomfort such as light shaking.',
     唤醒模式: 'Wake up Settings',
     助眠设置: 'Sleep aid Settings',
-    默认状态提示语2: 'Turn on the light and enter the\ndefault state (You can click the "Update"\nbutton below to update the current light\nstate to the default state of the lamp)',
+    默认状态提示语2: 'Turn on the light and enter the default state (You can click the "Update" button below to update the current light state to the default state of the lamp)',
 
     呼吸: 'Breathing',
     律动: 'Rhythm',
@@ -282,7 +282,7 @@ export default strings = new LocalizedStrings({
     傍晚设置: 'Evening setting',
     入睡设置: 'Sleep settings',
     开关灯切换灯光颜色: 'Segmenting functions',
-    开关灯切换灯光颜色提示: 'After turning on, when the lamp is powered\non or off within 8 seconds, the light color will\nswitch.(Be careful not to operate the switch\nmore than 8 times in a short period of time,\nwhich may cause the lamp to enter the\ndistribution network state）',
+    开关灯切换灯光颜色提示: 'After turning on, when the lamp is powered on or off within 8 seconds, the light color will switch.(Be careful not to operate the switch more than 8 times in a short period of time, which may cause the lamp to enter the distribution network state）',
     指数调光: 'Exponential dimming',
     灯光: 'Light'
   },
@@ -437,8 +437,8 @@ export default strings = new LocalizedStrings({
     开灯状态: '开灯状态',
     开灯: '开灯',
     关灯: '关灯',
-    开灯提示语: '灯具通电后，默认开灯（此状态为出厂默认\n状态）',
-    关灯提示语: '若上次通电时大于8秒，灯具通电后，默认\n进入关灯状态',
+    开灯提示语: '灯具通电后，默认开灯（此状态为出厂默认状态）',
+    关灯提示语: '若上次通电时大于8秒，灯具通电后，默认进入关灯状态',
     通电状态提示语: '此功能为了解决电网没电之后恢复供电，导致灯具默认开灯，从而影响用户休息的问题',
     通电状态提示语2: '此功能为了解决电网没电之后恢复供电，导致灯具默认开灯，从而影响用户休息的问题；\n\n使用机械开关时，需要在8秒内开关2次才能触发开灯',
     关灯前状态: '关灯前状态',
@@ -523,7 +523,7 @@ export default strings = new LocalizedStrings({
     专业设置功能说明: '灯光变化过程中，若灯光调光区间太小，达不到渐变最大时长要求，灯具会缩短灯光变化时长，优先保障灯具调光体验，避免灯光抖动等不适感。',
     唤醒模式: '唤醒设置',
     助眠设置: '助眠设置',
-    默认状态提示语2: '开灯进入默认状态（可点击下方"更新"按钮，将当前\n亮灯状态，更新为灯具默认状态）',
+    默认状态提示语2: '开灯进入默认状态（可点击下方"更新"按钮，将当前亮灯状态，更新为灯具默认状态）',
 
 
     呼吸: '呼吸',
@@ -566,7 +566,7 @@ export default strings = new LocalizedStrings({
     傍晚设置: '傍晚设置',
     入睡设置: '入睡设置',
     开关灯切换灯光颜色: '分段功能',
-    开关灯切换灯光颜色提示: '打开后，灯具在8s内通断电时，会切换\n灯光颜色。（注意避免短时间开关操作\n超过8次，导致灯具进入配网状态）',
+    开关灯切换灯光颜色提示: '打开后，灯具在8s内通断电时，会切换灯光颜色。（注意避免短时间开关操作超过8次，导致灯具进入配网状态）',
     指数调光: '指数调光',
     灯光: '灯光'
   }
