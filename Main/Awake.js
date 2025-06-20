@@ -580,7 +580,8 @@ export default class Default extends BaseComponent {
             <View style={{
               flexDirection: 'column',
               justifyContent: 'center',
-              alignSelf: 'center'
+              alignSelf: 'center',
+              width: "80%"
             }}>
 
               <Text style={{
