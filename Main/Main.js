@@ -2028,7 +2028,8 @@ export default class Main extends BaseComponent {
               }
             ]}
             title={Device.name}
-            subtitleStyle={{ fontSize: 14 }}
+            titleStyle={{  color: "xm#000" }}
+            subtitleStyle={{ fontSize: 14, color: "xm#999" }}
             subtitle={(!Device.isOnline && !this.state.btConnect) ? '' : this.state.lightPower ?
               (this.state.mode == 9 || this.state.mode == 10 ? (this.state.mode == 9 ? HomeLocalizableString.呼吸模式 : HomeLocalizableString.律动模式) : `${ HomeLocalizableString.brightness3(this.state.brightness) } | ${ HomeLocalizableString.temp3(this.state.color_temperature) }`) : HomeLocalizableString.已关闭}
             onPressTitle={(_) => console.log('onPressTitle')}
