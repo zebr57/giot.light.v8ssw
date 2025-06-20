@@ -2709,7 +2709,8 @@ export default class Main extends BaseComponent {
                     width: 0 + (((this.mScreenWidth * 0.94) - 40 - 0) * (this.state.brightness / 100)),
                     height: 48,
                     position: 'absolute',
-                    backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? '#4396EBFF' : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
+                    // backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? '#4396EBFF' : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
+                    backgroundColor: 'rgba(0,0,0,0)',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -2746,12 +2747,30 @@ export default class Main extends BaseComponent {
                 </View>
               </View>
 
+              { this.state.brightness > 8 ? 
+                (<View
+                  style={{
+                      height: 48,
+                      position: 'absolute',
+                      borderRadius: 48 / 2,
+                      paddingLeft: 15,
+                      paddingRight: 15,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      // justifyContent: 'center',
+                    zIndex: 2
+                  }}>
+                    <Image source={require('../resources/bright_low_white_ic.png')}/> 
+                </View>)
+              :null }
 
               {((!Device.isOnline && !this.state.btConnect) || !this.state.lightPower)
                 ? <View style={{ height: 48 }}/> :
                 <SlideGear
-                  blockStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
+                  containerStyle={{zIndex: 1}}
+                  blockStyle={{ backgroundColor: 'xm#fff' }}
                   showEndText={false}
+                  type={SlideGear.TYPE.CIRCLE}
                   disabled={(!Device.isOnline && !this.state.btConnect) || !this.state.lightPower}
                   options={this.generateArrayFromRange(1, 100)}
                   containerStyle={{ width: '100%', height: 48 }}
@@ -2787,7 +2806,8 @@ export default class Main extends BaseComponent {
                     this.setState({ isScroll: false });
                     this._sendCodeNotLimit(2, 2, value + 1);
                   }}
-                  minimumTrackTintColor={'rgba(0,0,0,0)'}
+                  // minimumTrackTintColor={'rgba(0,0,0,0)'}
+                  minimumTrackTintColor={(!Device.isOnline && !this.state.btConnect) ? 'xm#ECEEEF' : this.state.lightPower ? 'xm#4396EBFF' : 'xm#ECEEEF'}
                   maximumTrackTintColor={'rgba(0,0,0,0)'}
                 />
               }
@@ -2847,7 +2867,8 @@ export default class Main extends BaseComponent {
                     width: 0 + (((this.mScreenWidth * 0.94) - 40 - 0) * ((this.state.color_temperature - colorMin) / (colorMax - colorMin))),
                     height: 48,
                     position: 'absolute',
-                    backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? '#4396EBFF' : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
+                    // backgroundColor: (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF' : this.state.lightPower ? '#4396EBFF' : DarkMode.getColorScheme() === 'dark' ? 'xm#C2C2C210' : '#ECEEEF',
+                    backgroundColor: 'rgba(0,0,0,0)',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -2885,11 +2906,29 @@ export default class Main extends BaseComponent {
                   }
                 </View>
               </View>
+              {((this.state.color_temperature - colorMin) / (colorMax - colorMin)) * 100 > 8 ? 
+                    (<View
+                      style={{
+                          height: 48,
+                          position: 'absolute',
+                          borderRadius: 48 / 2,
+                          paddingLeft: 15,
+                          paddingRight: 15,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          // justifyContent: 'center',
+                        zIndex: 2
+                      }}>
+                        <Image source={require('../resources/temp_high_white_ic.png')}/> 
+                    </View>)
+                  :null }
               {((!Device.isOnline && !this.state.btConnect) || !this.state.lightPower)
                 ? <View style={{ height: 48 }}/> :
                 <SlideGear
-                  blockStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
+                  // blockStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
+                  blockStyle={{ backgroundColor: 'xm#fff' }}
                   showEndText={false}
+                  type={SlideGear.TYPE.CIRCLE}
                   disabled={(!Device.isOnline && !this.state.btConnect) || !this.state.lightPower}
                   options={this.generateArrayFromRange(colorMin, colorMax)}
                   containerStyle={{ width: '100%', height: 48 }}
@@ -2924,7 +2963,8 @@ export default class Main extends BaseComponent {
                     this.setState({ isScroll: false });
                     this._sendCodeNotLimit(2, 3, parseInt(value + colorMin));
                   }}
-                  minimumTrackTintColor={'rgba(0,0,0,0)'}
+                  // minimumTrackTintColor={'rgba(0,0,0,0)'}
+                  minimumTrackTintColor={(!Device.isOnline && !this.state.btConnect) ? 'xm#ECEEEF' : this.state.lightPower ? 'xm#4396EBFF' : 'xm#ECEEEF'}
                   maximumTrackTintColor={'rgba(0,0,0,0)'}
                 />}
             </View>
