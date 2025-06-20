@@ -3016,6 +3016,7 @@ export default class Main extends BaseComponent {
                   source={!this.state.lightPower || (!Device.isOnline && !this.state.btConnect) ? DarkMode.getColorScheme() === 'dark' ? require('../resources/shengwu_dis_dark.png') : require('../resources/shengwu_dis.png') : require('../resources/shengwu_sel.png')}/>
 
                 <View style={{
+                  flex: 1,
                   marginLeft: 13
                 }}>
                   <Text
@@ -3039,7 +3040,7 @@ export default class Main extends BaseComponent {
                     }}>{HomeLocalizableString.灯光跟随生物节律自动变化}</Text>
                 </View>
 
-                <View style={{ flex: 1 }}/>
+                {/* <View style={{ flex: 1 }}/> */}
 
                 <Image
                   style={{ tintColor: DarkMode.getColorScheme() === 'dark' ? 'xm#565656' : null }}
