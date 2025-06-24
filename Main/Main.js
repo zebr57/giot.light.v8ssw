@@ -2007,7 +2007,7 @@ export default class Main extends BaseComponent {
             /*                 backgroundColor={this.state.lightPower ?
                                          `xm${ColorTemperatureGetter.getColorFromPercent(getColorTemperaturePercent(this.state.color_temperature, [colorMin, colorMax])) + parseInt(this._getCheckBrightness(this.state.brightness * (185 / 100) + 70)).toString(16)}` : null}
                                      type={this.state.lightPower ? NavigationBar.TYPE.LIGHT : NavigationBar.TYPE.DARK} */
-            type={NavigationBar.TYPE.DARK}
+            type={NavigationBar.TYPE.LIGHT}
             left={[
               {
                 key: 'back',
@@ -2028,8 +2028,7 @@ export default class Main extends BaseComponent {
               }
             ]}
             title={Device.name}
-            titleStyle={{  color: "xm#000" }}
-            subtitleStyle={{ fontSize: 14, color: "xm#999" }}
+            subtitleStyle={{ fontSize: 12, color: "xm#999" }}
             subtitle={(!Device.isOnline && !this.state.btConnect) ? '' : this.state.lightPower ?
               (this.state.mode == 9 || this.state.mode == 10 ? (this.state.mode == 9 ? HomeLocalizableString.呼吸模式 : HomeLocalizableString.律动模式) : `${ HomeLocalizableString.brightness3(this.state.brightness) } | ${ HomeLocalizableString.temp3(this.state.color_temperature) }`) : HomeLocalizableString.已关闭}
             onPressTitle={(_) => console.log('onPressTitle')}
