@@ -3067,7 +3067,7 @@ export default class Main extends BaseComponent {
                   }
                   if (this.state.lightPower)
                     if (this.state.mode == 9) {
-                      this._sendCode(2, 7, 9);
+                      this._sendCode(2, 7, 0);
                     } else {
                       this._sendCode(2, 7, 9);
                     }
@@ -3142,7 +3142,7 @@ export default class Main extends BaseComponent {
                   }
                   if (this.state.lightPower)
                     if (this.state.mode == 10) {
-                      this._sendCode(2, 7, 10);
+                      this._sendCode(2, 7, 0);
                     } else {
                       this._sendCode(2, 7, 10);
                     }
@@ -3236,7 +3236,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 1) {
-                          this._sendCode(2, 7, 1);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 1);
                         }
@@ -3259,7 +3259,7 @@ export default class Main extends BaseComponent {
                         return;
                       }
                       if (this.state.mode == 2) {
-                        this._sendCode(2, 7, 2);
+                        this._sendCode(2, 7, 0);
                       } else {
                         this._sendCode(2, 7, 2);
                       }
@@ -3280,7 +3280,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 3) {
-                          this._sendCode(2, 7, 3);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 3);
                         }
@@ -3300,7 +3300,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 4) {
-                          this._sendCode(2, 7, 4);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 4);
                         }
@@ -3323,7 +3323,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 5) {
-                          this._sendCode(2, 7, 5);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 5);
                         }
@@ -3343,7 +3343,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 6) {
-                          this._sendCode(2, 7, 6);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 6);
                         }
@@ -3363,7 +3363,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 7) {
-                          this._sendCode(2, 7, 7);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 7);
                         }
@@ -3382,7 +3382,7 @@ export default class Main extends BaseComponent {
                         return;
                       }
                       if (this.state.mode == 8) {
-                        this._sendCode(2, 7, 8);
+                        this._sendCode(2, 7, 0);
                       } else {
                         this._sendCode(2, 7, 8);
                       }
@@ -3414,7 +3414,7 @@ export default class Main extends BaseComponent {
                         return;
                       }
                       if (this.state.mode == 2) {
-                        this._sendCode(2, 7, 2);
+                        this._sendCode(2, 7, 0);
                       } else {
                         this._sendCode(2, 7, 2);
                       }
@@ -3434,7 +3434,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 3) {
-                          this._sendCode(2, 7, 3);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 3);
                         }
@@ -3454,7 +3454,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 5) {
-                          this._sendCode(2, 7, 5);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 5);
                         }
@@ -3474,7 +3474,7 @@ export default class Main extends BaseComponent {
                       }
                       if (this.state.lightPower)
                         if (this.state.mode == 4) {
-                          this._sendCode(2, 7, 4);
+                          this._sendCode(2, 7, 0);
                         } else {
                           this._sendCode(2, 7, 4);
                         }
