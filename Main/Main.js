@@ -2753,24 +2753,24 @@ export default class Main extends BaseComponent {
               { this.state.brightness > 8 ? 
                 (<View
                   style={{
-                      height: 48,
-                      position: 'absolute',
-                      borderRadius: 48 / 2,
-                      paddingLeft: 15,
-                      paddingRight: 15,
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      // justifyContent: 'center',
+                    height: 48,
+                    position: 'absolute',
+                    borderRadius: 48 / 2,
+                    paddingLeft: 15,
+                    paddingRight: 15,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    // justifyContent: 'center',
                     zIndex: 2
                   }}>
-                    <Image source={require('../resources/bright_low_white_ic.png')}/> 
+                  <Image source={require('../resources/bright_low_white_ic.png')}/> 
                 </View>)
-              :null }
+                : null }
 
               {((!Device.isOnline && !this.state.btConnect) || !this.state.lightPower)
                 ? <View style={{ height: 48 }}/> :
                 <SlideGear
-                  containerStyle={{zIndex: 1}}
+                  containerStyle={{ zIndex: 1 }}
                   blockStyle={{ backgroundColor: 'xm#fff' }}
                   showEndText={false}
                   type={SlideGear.TYPE.CIRCLE}
@@ -2910,21 +2910,21 @@ export default class Main extends BaseComponent {
                 </View>
               </View>
               {((this.state.color_temperature - colorMin) / (colorMax - colorMin)) * 100 > 8 ? 
-                    (<View
-                      style={{
-                          height: 48,
-                          position: 'absolute',
-                          borderRadius: 48 / 2,
-                          paddingLeft: 15,
-                          paddingRight: 15,
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                          // justifyContent: 'center',
-                        zIndex: 2
-                      }}>
-                        <Image source={require('../resources/temp_high_white_ic.png')}/> 
-                    </View>)
-                  :null }
+                (<View
+                  style={{
+                    height: 48,
+                    position: 'absolute',
+                    borderRadius: 48 / 2,
+                    paddingLeft: 15,
+                    paddingRight: 15,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    // justifyContent: 'center',
+                    zIndex: 2
+                  }}>
+                  <Image source={require('../resources/temp_high_white_ic.png')}/> 
+                </View>)
+                : null }
               {((!Device.isOnline && !this.state.btConnect) || !this.state.lightPower)
                 ? <View style={{ height: 48 }}/> :
                 <SlideGear

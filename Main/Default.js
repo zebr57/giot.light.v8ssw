@@ -466,7 +466,7 @@ export default class Default extends BaseComponent {
             alignItems: 'center'
           }}>
 
-            <View style={{width: "80%"}}>
+            <View style={{ width: "80%" }}>
               <Text style={{
                 color: '#000000',
                 fontSize: 16,
@@ -511,7 +511,7 @@ export default class Default extends BaseComponent {
             alignItems: 'center'
           }}>
 
-            <View style={{width: "80%"}}>
+            <View style={{ width: "80%" }}>
               <Text style={{
                 color: '#000000',
                 fontSize: 16,
@@ -580,7 +580,7 @@ export default class Default extends BaseComponent {
             alignItems: 'center'
           }}>
 
-            <View style={{width: "80%"}}>
+            <View style={{ width: "80%" }}>
               <Text style={{
                 color: '#000000',
                 fontSize: 16,
@@ -644,7 +644,7 @@ export default class Default extends BaseComponent {
               alignItems: 'center'
             }}>
 
-              <View style={{width: "80%"}}>
+              <View style={{ width: "80%" }}>
                 <Text style={{
                   color: '#000000',
                   fontSize: 16,
@@ -695,7 +695,7 @@ export default class Default extends BaseComponent {
             alignItems: 'center'
           }}>
 
-            <View style={{width: "80%"}}>
+            <View style={{ width: "80%" }}>
               <Text style={{
                 color: '#000000',
                 fontSize: 16,
@@ -751,7 +751,7 @@ export default class Default extends BaseComponent {
               alignItems: 'center'
             }}>
 
-              <View style={{width: "80%"}}>
+              <View style={{ width: "80%" }}>
                 <Text style={{
                   color: 'rgb(64,64,64)',
                   fontSize: 14,
