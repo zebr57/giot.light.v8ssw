@@ -898,7 +898,7 @@ export default class Default extends BaseComponent {
           <Text style={{
             width: 60,
             color: '#000000',
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: 'bold'
           }}>{name}</Text>
 
