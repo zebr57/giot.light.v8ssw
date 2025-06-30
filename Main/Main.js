@@ -2230,9 +2230,9 @@ export default class Main extends BaseComponent {
               this._updataUi({ siid: 2, piid: 2 }, (100 - lightPec) < 1 ? 1 : 100 - lightPec);
               this._updataUi({ siid: 2, piid: 3 }, colorMin + ((colorMax - colorMin) * (colorPec / 100)));
 
+              return;
               if (new Date().getTime() - this.state.lastControlTimeSlide < 500) {
                 // 直接过滤
-                return;
               }
 
               // 发送亮度
@@ -2329,9 +2329,9 @@ export default class Main extends BaseComponent {
               this._updataUi({ siid: 2, piid: 2 }, lightPec);
               this._updataUi({ siid: 2, piid: 3 }, colorPec);
 
+              return;
               if (new Date().getTime() - this.state.lastControlTimeSlide < 500) {
                 // 直接过滤
-                return;
               }
 
               // 发送亮度
