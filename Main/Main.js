@@ -965,7 +965,7 @@ export default class Main extends BaseComponent {
             // 匹配失败 不响应
             return;
           }
-          if (new Date().getTime() - this.state.lastControlTime > 5000) {
+          if (new Date().getTime() - this.state.lastControlTime > 3000) {
             if (messages.has('prop.2.1')) { // 灯开关
               this.setState({
                 lightPower: messages.get('prop.2.1')[0]
@@ -3348,6 +3348,10 @@ export default class Main extends BaseComponent {
                         if (this.state.mode == 7) {
                           this._sendCode(2, 7, 0);
                         } else {
+                          this.setState({
+                            brightness: this.state.startBright,
+                            color_temperature: this.state.startColor
+                          });
                           this._sendCode(2, 7, 7);
                         }
                     }}
